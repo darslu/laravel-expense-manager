@@ -42,7 +42,8 @@
 
                         <th>@lang('quickadmin.currency.fields.title')</th>
                         <th>@lang('quickadmin.currency.fields.symbol')</th>
-                        <th>@lang('quickadmin.currency.fields.money-format')</th>
+                        <th>@lang('quickadmin.currency.fields.money-format-thousands')</th>
+                        <th>@lang('quickadmin.currency.fields.money-format-decimal')</th>
                         <th>@lang('quickadmin.currency.fields.created-by')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
@@ -62,7 +63,8 @@
 
                                 <td field-key='title'>{{ $currency->title }}</td>
                                 <td field-key='symbol'>{{ $currency->symbol }}</td>
-                                <td field-key='money_format'>{{ $currency->money_format }}</td>
+                                <td field-key='money_format'>{{ $currency->money_format_thousands }}</td>
+                                <td field-key='money_format'>{{ $currency->money_format_decimal }}</td>
                                 <td field-key='created_by'>{{ $currency->created_by->name or '' }}</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>

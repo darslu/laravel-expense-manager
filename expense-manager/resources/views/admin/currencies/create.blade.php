@@ -36,12 +36,24 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('money_format', trans('quickadmin.currency.fields.money-format').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('money_format', old('money_format'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('money_format_thousands', 'Money format for thousands' .'', ['class' => 'control-label']) !!}
+                    {!! Form::text('money_format_thousands', old('money_format_thousands'), ['class' => 'form-control', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
-                    @if($errors->has('money_format'))
+                    @if($errors->has('money_format_thousands'))
                         <p class="help-block">
-                            {{ $errors->first('money_format') }}
+                            {{ $errors->first('money_format_thousands') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('money_format_decimal', trans('quickadmin.currency.fields.money-format-decimal').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('money_format_decimal', old('money_format_decimal'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('money_format_decimal'))
+                        <p class="help-block">
+                            {{ $errors->first('money_format_decimal') }}
                         </p>
                     @endif
                 </div>

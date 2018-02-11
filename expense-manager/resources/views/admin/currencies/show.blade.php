@@ -22,7 +22,11 @@
                         </tr>
                         <tr>
                             <th>@lang('quickadmin.currency.fields.money-format')</th>
-                            <td field-key='money_format'>{{ $currency->money_format }}</td>
+                            <td field-key='money_format'>{{ $currency->money_format_thousands }}</td>
+                        </tr>
+                        <tr>
+                            <th>@lang('quickadmin.currency.fields.money-format')</th>
+                            <td field-key='money_format'>{{ $currency->money_format_decimal }}</td>
                         </tr>
                         <tr>
                             <th>@lang('quickadmin.currency.fields.created-by')</th>
