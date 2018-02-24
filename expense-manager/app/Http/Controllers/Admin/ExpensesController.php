@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreExpensesRequest;
 use App\Http\Requests\Admin\UpdateExpensesRequest;
-use Illuminate\Support\Facades\Session;
+// use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,13 +24,13 @@ class ExpensesController extends Controller
         if (! Gate::allows('expense_access')) {
             return abort(401);
         }
-        if ($filterBy = Input::get('filter')) {
-            if ($filterBy == 'all') {
-                Session::put('Expense.filter', 'all');
-            } elseif ($filterBy == 'my') {
-                Session::put('Expense.filter', 'my');
-            }
-        }
+        // if ($filterBy = Input::get('filter')) {
+        //     if ($filterBy == 'all') {
+        //         Session::put('Expense.filter', 'all');
+        //     } elseif ($filterBy == 'my') {
+        //         Session::put('Expense.filter', 'my');
+        //     }
+        // }
 
                 $expenses = Expense::all();
 

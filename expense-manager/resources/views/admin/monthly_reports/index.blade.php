@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <h3 class="page-title">Monthly Report</h3>
 
     {!! Form::open(['method' => 'get']) !!}
