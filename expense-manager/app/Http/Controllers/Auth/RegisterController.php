@@ -22,12 +22,15 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
+    
+
     /**
      * Where to redirect users after login / registration.
      *
      * @var string
      */
     protected $redirectTo = '/admin/home';
+    
 
     /**
      * Create a new controller instance.
@@ -37,6 +40,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        
     }
 
     /**
@@ -53,6 +57,14 @@ class RegisterController extends Controller
             'password' => 'required|min:6|confirmed',
         ]);
     }
+
+    public function showRegistrationForm()
+    {
+        $currencies = \App\Currency::all();
+        
+        return view('auth.register', compact('currencies'));
+    }
+
 
     /**
      * Create a new user instance after a valid registration.
